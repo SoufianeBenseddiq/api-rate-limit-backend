@@ -11,5 +11,5 @@ import java.util.Optional;
 
 @Repository
 public interface UsageRecordRepository extends JpaRepository<UsageRecord, Long> {
-
+    Optional<UsageRecord> findByConsumerAndWindowTypeAndWindowStart(ApiConsumer consumer, WindowType windowType, LocalDateTime windowStart);
 }

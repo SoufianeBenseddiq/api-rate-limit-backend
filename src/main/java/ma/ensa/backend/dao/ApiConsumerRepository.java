@@ -10,5 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface ApiConsumerRepository extends JpaRepository<ApiConsumer, Long> {
-
+    Optional<ApiConsumer> findByApiKey(String apiKey);
+    boolean existsByApiKey(String apiKey);
+    Optional<ApiConsumer> findByApiKeyAndStatus(String apiKey, ConsumerStatus status);
 }
